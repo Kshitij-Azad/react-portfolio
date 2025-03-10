@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import {Link} from "react-router-dom";  
+  
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,23 +21,23 @@ export const Header = () => {
         </button>
 
         <ul className="hidden md:flex space-x-6">
-          <li><a href="#" className="hover:text-yellow-300 ">Home</a></li>
-          <li><a href="#" className="hover:text-yellow-300">About</a></li>
-          <li><a href="#" className="hover:text-yellow-300">Skills</a></li>
-          <li><a href="#" className="hover:text-yellow-300">Projects</a></li>
-          <li><a href="#" className="hover:text-yellow-300">Experience</a></li>
-          <li><a href="#" className="hover:text-yellow-300">Contact</a></li>
+          <li><Link to={'/'}><a href="#" className="hover:text-yellow-300 ">Home</a></Link></li>
+          <li><Link to={'/about'}><a href="#" className="hover:text-yellow-300">About</a></Link></li>
+          <li><Link to={'/skills'}><a href="#" className="hover:text-yellow-300">Skills</a></Link></li>
+          <li><Link to={'/projects'}><a href="#" className="hover:text-yellow-300">Projects</a></Link></li>
+          <li><Link to={'/experience'}><a href="#" className="hover:text-yellow-300">Experience</a></Link></li>
+          <li><Link to={'/contact'}><a href="#" className="hover:text-yellow-300">Contact</a></Link></li>
         </ul>
       </div>
 
       {isOpen && (
         <ul className="flex flex-col space-y-4 bg-cyan-950 p-4 text-white mt-2 md:hidden" id="toggle" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} >
-          <li><a href="#" className="block hover:text-yellow-300">Home</a></li>
-          <li><a href="#" className="block hover:text-yellow-300">About</a></li>
-          <li><a href="#" className="block hover:text-yellow-300">Skills</a></li>
-          <li><a href="#" className="block hover:text-yellow-300">Projects</a></li>
-          <li><a href="#" className="block hover:text-yellow-300">Experience</a></li>
-          <li><a href="#" className="block hover:text-yellow-300">Contact</a></li>
+          <li><Link to={'/'}><a href="#" className="block hover:text-yellow-300">Home</a></Link></li>
+          <li><Link to={'/about'}><a href="#" className="block hover:text-yellow-300">About</a></Link></li>
+          <li><Link to={'/skills'}><a href="#" className="block hover:text-yellow-300">Skills</a></Link></li>
+          <li><Link to={'/projects'}><a href="#" className="block hover:text-yellow-300">Projects</a></Link></li>
+          <li><Link to={'/experience'}><a href="#" className="block hover:text-yellow-300">Experience</a></Link></li>
+          <li><Link to={'/'}><a href="#" className="block hover:text-yellow-300">Contact</a></Link></li>
         </ul>
       )}
     </nav>
